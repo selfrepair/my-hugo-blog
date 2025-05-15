@@ -1,0 +1,29 @@
+baseURL: "http://localhost:1313/"
+languageCode: "en-us"
+title: "My Blog"
+theme: "PaperMod"
+
+params:
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
+  defaultTheme: auto
+  disableThemeToggle: false
+  homeInfoParams:
+    Title: "Welcome to My Blog"
+    Content: "This is my Hugo blog using the PaperMod theme."
+
+  mainSections:
+    - posts
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 1
+
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 2

@@ -1,0 +1,227 @@
+body {
+    font-family: 'DM Mono', monospace;
+  }
+
+  a[title="Hannah Borghese (Alt + H)"] {
+    font-family: 'DM Mono', monospace !important;  /* Google Font */
+    font-weight: 300 !important;                  /* Thin weight */
+    font-size: 1rem !important;                 /* Adjust size */
+  }
+
+ /* Style for all menu items */
+nav a {
+    font-size: 1rem !important;  /* Adjust font size */
+    font-family: 'DM Mono', monospace !important;  /* Apply the custom font */
+    font-weight: 300 !important;  /* Make it thinner */
+  }
+  
+  /* Style for all spans inside menu items */
+  nav a span {
+    font-size: 1rem !important;  /* Adjust font size */
+    font-family: 'DM Mono', monospace !important;  /* Apply the custom font */
+    font-weight: 300 !important;  /* Make it thinner */
+  }
+  
+  
+  /* h1 - Main Title */
+h1 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 300 !important;  /* Thin */
+    font-size: 2rem !important;  /* Adjust size */
+  }
+  
+  /* h2 - Subheading */
+  h2 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 200 !important;  /* Thinner */
+    font-size: 1.25rem !important;  /* Adjust size */
+  }
+  
+  /* h3 - Section Heading */
+  h3 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 100 !important;  /* Very thin */
+    font-size: 1rem !important;  /* Adjust size */
+  }
+  
+  /* h4 - Subsection Heading */
+  h4 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 100 !important;  /* Very thin */
+    font-size: 1.5rem !important;  /* Adjust size */
+  }
+  
+  /* h5 - Smaller Heading */
+  h5 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 100 !important;  /* Very thin */
+    font-size: 1.25rem !important;  /* Adjust size */
+  }
+  
+  /* h6 - Smallest Heading */
+  h6 {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 100 !important;  /* Very thin */
+    font-size: 1rem !important;  /* Adjust size */
+  }
+
+/* Constrain text blocks to 65ch but keep left-aligned */
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  max-width: 65ch;
+  margin-left: 0; /* Remove auto margins */
+  margin-right: auto; /* Let text wrap naturally */
+}
+
+/* Preserve full-width elements */
+.post-content > div:not(.text-content),
+.post-content .image-grid {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .post-content p {
+    max-width: 85%; /* Slightly wider on mobile */
+  }
+}
+
+ /* ===== Wider Content Area ===== */
+:root {
+    --main-width: 85% !important;    /* Reduced margins */
+    --content-width: 85% !important;
+    --gap: 1rem !important;          /* Space between grid items */
+    --header-padding: 0 !important;   /* Override theme defaults */
+  }
+  
+  /* ===== Image Grid System ===== */
+  /* Base grid remains responsive */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    place-items: center; /* Centers all items */
+  }
+  
+  /* Only add full-width class to images that NEED their own row */
+  .row-break {
+    grid-column: 1 / -1;
+    width: 70%; /* Control width of solo images */
+    margin: 0 auto; /* Center them */
+  }
+  
+  /* Default image size */
+  .image-grid img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Individual image controls */
+  .img-70 { max-width: 70% !important; }
+  .img-50 { max-width: 50% !important; }
+  .img-30 { max-width: 30% !important; }
+  
+  /* Hover effects (optional) */
+  .image-grid img:hover {
+    transform: scale(1.03);
+  }
+
+ /* Image sizing */
+.img-size-70 { width: 70% !important; }
+.img-size-50 { width: 50% !important; }
+
+/* Margin System (100% reliable) */
+[class*="margin-"] {
+  display: block !important; /* Override grid/flex conflicts */
+}
+
+.margin-left-10 { margin-left: 10% !important; }
+.margin-left-20 { margin-left: 20% !important; }
+.margin-right-15 { margin-right: 15% !important; }
+
+/* Debug helper (visualize margins) */
+.debug-margins * { outline: 1px solid cyan !important; }
+  
+/* Base header container */
+.header {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Does all alignment work */
+  }
+  
+  /* Remove all theme spacing defaults */
+  .header-inner,
+  .header .logo,
+  .header nav {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Menu item spacing */
+  .header nav span {
+    margin-left: 1.5rem; /* Consistent gap between menu items */
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      --main-width: 90%; /* Slightly wider on mobile */
+    }
+    .header nav span {
+      margin-left: 1rem; /* Tighter menu spacing */
+    }
+  }
+
+/* swiper gallery container */
+.swiper.myGallery {
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 80vh; /* Set height to fit content better */
+}
+
+/* center slide contents */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the slide takes full height */
+}
+
+/* image sizing */
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* Keeps the aspect ratio */
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+/* navigation arrows size and color */
+.swiper-button-prev,
+.swiper-button-next {
+  transform: scale(0.5); /* smaller arrows */
+  color: black !important;
+}
+
+.video-slide {
+  max-width: 100%;
+  max-height: 100vh;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+
+
+
